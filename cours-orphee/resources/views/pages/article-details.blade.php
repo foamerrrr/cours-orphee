@@ -7,8 +7,8 @@
     @extends('layouts.app')
     @section('title', 'Accueil')
     @section('content')
+    <h2> article n'{{$id}} <h2>
     <p>Ceci est le contenu principal de la page.</p>
-    <h2> Page non trouvee </h2>
     @endsection
 </body>
 </html>

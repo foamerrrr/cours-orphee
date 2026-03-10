@@ -5,8 +5,8 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function show($id): string
+    public function show($id)
     {
-        return "article n°$id";
+        return view('pages.article-details', ['id' => $id]);
     }
 }
