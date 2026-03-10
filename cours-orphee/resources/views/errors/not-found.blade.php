@@ -1,5 +1,5 @@
 @extends('layouts.app')
+@section('title', "not-found")
 @section('content')
-<p>Ceci est le contenu principal de la page.</p>
 <h2> Page non trouvee </h2>
 @endsection
