@@ -5,7 +5,6 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use Illuminate\Support\Str;
 
 class Article extends Component
 {
@@ -19,7 +18,7 @@ class Article extends Component
     public function __construct($title = 'info', $description = 'info')
     {
         $this->title = $title;
-        $this->description = Str::limit($description, 30);
+        $this->description = $description;
     }
 
     /**
