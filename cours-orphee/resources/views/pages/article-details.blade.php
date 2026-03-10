@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>erreur 404</title>
-</head>
+<title>article details</title>
 <body>
     @extends('layouts.app')
-    @section('title', 'Accueil')
     @section('content')
     <h2> article n'{{$id}} <h2>
     <p>Ceci est le contenu principal de la page.</p>

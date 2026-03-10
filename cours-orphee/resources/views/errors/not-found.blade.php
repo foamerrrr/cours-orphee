@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>erreur 404</title>
+    <title>page non trouvee</title>
 </head>
 <body>
     @extends('layouts.app')
-    @section('title', 'Accueil')
     @section('content')
     <p>Ceci est le contenu principal de la page.</p>
     <h2> Page non trouvee </h2>
