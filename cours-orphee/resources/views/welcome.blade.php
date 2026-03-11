@@ -9,10 +9,11 @@ use Illuminate\Support\Str;
     @if($loop->last)
         @break
     @endif
-<a href="/articles/{{ $article->id }}"/>
-<x-article 
-    :title="$article->title" 
-    :description="Str::limit($article->description, 30)" 
-/>
+<a href="/articles/{{ $article->id }}">
+    <x-article 
+        :title="$article->title" 
+        :description="Str::limit($article->description, 30)" 
+    />
+</a>
 @endforeach
 @endsection

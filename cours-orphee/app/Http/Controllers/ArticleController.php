@@ -8,7 +8,7 @@ class ArticleController extends Controller
 {
     public function show($id)
     {   
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         if (isset($article)) {
             return view('pages.article-details', compact('article'));
         }
@@ -34,7 +34,7 @@ class ArticleController extends Controller
 
     public function update($id)
     {
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         if (isset($article)) {    
             $article->update([
                 'title' => 'Titre modifié',
@@ -45,7 +45,7 @@ class ArticleController extends Controller
 
     public function delete($id)
     {   
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
 
         if (isset($article)) {    
             Article::destroy($id);   
