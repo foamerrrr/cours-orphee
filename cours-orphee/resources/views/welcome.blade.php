@@ -1,15 +1,18 @@
 @extends('layouts.app')
 @section('title', "Bienvenue")
 @section('content')
+@php
+use Illuminate\Support\Str;
+@endphp
 <h2> Bienvenue sur le site de {{ $name }} </h2>
 @foreach($articles as $article)
     @if($loop->last)
         @break
     @endif
-<a href="/articles/{{ $article->id }}">
+<a href="/articles/{{ $article->id }}"/>
 <x-article 
     :title="$article->title" 
-    :description="$article->description" 
+    :description="Str::limit($article->description, 30)" 
 />
 @endforeach
 @endsection

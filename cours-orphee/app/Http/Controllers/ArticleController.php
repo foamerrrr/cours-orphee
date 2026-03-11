@@ -7,40 +7,48 @@ use App\Models\Article;
 class ArticleController extends Controller
 {
     public function show($id)
-    {
+    {   
         $article = Article::find($id);
-
-        return view('pages.article-details', compact('article'));
+        if (isset($article)) {
+            return view('pages.article-details', compact('article'));
+        }
     }
 
-    public function creer()
+    public function create()
     {
         Article::create([
-            'title' => "Titre",
-            'description' => "Description",
-            'date' => now()
-        ]);
+                'title' => 'L’IA soigne mieux',
+                'description' => 'L’intelligence artificielle aide les médecins à diagnostiquer plus vite.'
+            ],
+            [
+                'title' => 'Villes vertes',
+                'description' => 'Les métropoles deviennent plus écologiques et durables.'
+            ],
+            [
+                'title' => 'Télétravail',
+                'description' => 'Plus de liberté, mais aussi plus de solitude.'
+            ]);
 
         return "articles creer";
     }
 
-    public function modifier($id)
+    public function update($id)
     {
         $article = Article::find($id);
-
-        $article->update([
-            'title' => 'Titre modifié',
-            'description' => 'Description modifiée'
-        ]);
+        if (isset($article)) {    
+            $article->update([
+                'title' => 'Titre modifié',
+                'description' => 'Description modifiée'
+            ]);   
+        }
     }
 
-    public function supprimer($id)
-    {
-        Article::destroy($id);
-    }
+    public function delete($id)
+    {   
+        $article = Article::find($id);
 
-    public function index()
-    {
-        $articles = Article::all();
+        if (isset($article)) {    
+            Article::destroy($id);   
+        }
     }
 }
