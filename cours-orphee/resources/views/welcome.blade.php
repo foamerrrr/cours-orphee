@@ -6,9 +6,10 @@
     @if($loop->last)
         @break
     @endif
+<a href="/articles/{{ $article->id }}">
 <x-article 
-    :title="$article['title']" 
-    :description="$article['description']" 
+    :title="$article->title" 
+    :description="$article->description" 
 />
 @endforeach
 @endsection
