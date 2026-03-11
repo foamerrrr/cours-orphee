@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('title', "Bienvenue")
 @section('content')
-@php
-use Illuminate\Support\Str;
-@endphp
 <h2> Bienvenue sur le site de {{ $name }} </h2>
 @foreach($articles as $article)
     @if($loop->last)
