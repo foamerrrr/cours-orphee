@@ -6,7 +6,6 @@ use App\Http\Controllers\ArticleController;
 
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::prefix('articles')->group(function () {
-    Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('article.details');
     Route::get('/creer', [ArticleController::class, 'creer']);
     Route::get('/modifier/{id}', [ArticleController::class, 'modifier']);
     Route::get('/supprimer/{id}', [ArticleController::class, 'supprimer']);
