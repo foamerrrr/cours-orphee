@@ -9,9 +9,7 @@ class ArticleController extends Controller
     public function show($id)
     {   
         $article = Article::findOrFail($id);
-        if (isset($article)) {
-            return view('pages.article-details', compact('article'));
-        }
+        return view('pages.article-details', compact('article'));
     }
 
     public function create()
@@ -34,21 +32,16 @@ class ArticleController extends Controller
 
     public function update($id)
     {
-        $article = Article::findOrFail($id);
-        if (isset($article)) {    
-            $article->update([
-                'title' => 'Titre modifié',
-                'description' => 'Description modifiée'
-            ]);   
-        }
+        $article = Article::findOrFail($id);    
+        $article->update([
+            'title' => 'Titre modifié',
+            'description' => 'Description modifiée'
+        ]); 
     }
 
     public function delete($id)
     {   
         $article = Article::findOrFail($id);
-
-        if (isset($article)) {    
-            Article::destroy($id);   
-        }
+        Article::destroy($id);   
     }
 }
